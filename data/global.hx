@@ -1,6 +1,14 @@
 import Sys;
 
+// /*
+var youdidit = false;
 function preStateSwitch() {
-    var a = Sys.command("git pull");
-    trace(a);
+    if (!youdidit) {
+        // Sys.command("git pull");
+        var doit = Sys.command("cd mods/" + "auto-updater" + " && git pull");
+        if (doit == 0) {
+            youdidit = true;
+        }
+    }
 }
+// */
